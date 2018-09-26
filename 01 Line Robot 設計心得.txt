@@ -1,0 +1,22 @@
+Line Robot 設計步驟
+
+需要先申請一個 Line 帳號 (有經過手機認證) 
+
+用此帳號申請 Line Developers (https://developers.line.me)
+備註: 不要透過台灣網站申請, 因為台灣會自動申請一組只能收不能發的機器人
+
+申請一個 Provider (一個 developer 可以有好多 Provider, 類似專案的定義
+ 
+Create a channel (一個 Provider 可以有好多 Channel, 一個 Channel 代表一個機器人
+重要: 註冊時記得 Plan 選 Developer Trail (這樣才有發送的功能)
+更改設定: (1) 記住 Channel ID 跟 Channel secret
+          (2) Plan 需要是 For Developer
+          (3) Issue(發出) 一個 Channel access toke (0 代表永久有效)
+          (4) Enable Use webhooks, 設定 Webhook URL (導向機器人 url, 必需為 https)
+          (5) Auto-reply messages disabled (取消自動回覆訊息, 改由機器人接手)
+          (6) 掃 QR Code 可加入此機器人
+          (7) Your user ID => 指的是目前登入 Line 帳號的 ID (for programming, unique)
+
+有關 https 的 Line 機器人程式撰寫請參考 Heroku 的建立說明
+
+

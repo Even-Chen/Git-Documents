@@ -1,0 +1,40 @@
+注意: postgres local 版本跟 Server 版本要一致才可 Sync (否則會有指令不相通的問題)
+
+
+可先在 .env 檔內設定 PGUSER=user, PGPASSWORD=password
+
+
+要先 create DB
+#CREATE DATABASE mylocaldb WITH TEMPLATE template1;
+#drop database mylocaldb;
+
+## Backup heroku server database (可以 schedule)
+$heroku pg:backups:capture
+$heroku pg:backups:download
+
+$heroku pg:backups:capture --app sushi
+$heroku pg:backups:capture HEROKU_POSTGRESQL_PINK
+
+
+$heroku pg:backups:url b001 --app sushi
+
+## Restore dump files to local
+$pg_restore --verbose --clean --no-acl --no-owner -h localhost -d mylocaldb latest.dump
+$pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d mylocaldb latest.dump
+
+
+
+CREATE DATABASE mylocaldb WITH TEMPLATE template1;
+
+
+## Check backup logs
+$heroku pg:backups --app lit-cliffs-59614
+$heroku pg:backups:info b017 --app lit-cliffs-59614
+
+## Restore
+$heroku pg:backups:restore b101 DATABASE_URL --app sushi
+
+
+
+
+
