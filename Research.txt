@@ -1,0 +1,53 @@
+The "Django" and "Flask" web frameworks feature convenient built-in web servers
+
+"Django" is a high-level Python Web framework.
+"Flask" is a microframework for Python based on Werkzeug, Jinja 2 and good intentions.
+
+
+"Gunicorn" is a pure-Python HTTP server for WSGI applications. 
+"Gunicorn" ‘Green Unicorn’ is a Python WSGI HTTP Server for UNIX
+
+
+First, and most importantly, Heroku web applications require a Procfile.
+Be sure to add gunicorn to your requirements.txt or Pipfile file as well.
+
+
+Managing config vars (Heroku 環境變數)
+
+$ heroku config (show config)
+
+Python 取環境變數
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['S3_KEY'], os.environ['S3_SECRET'])
+
+.env (是 Local 跑時用的環境變數)
+
+$ heroku config:get CONFIG-VAR-NAME -s  >.env (將 server 環境變數取下)
+
+
+Configuring Django Apps for Heroku
+
+First, and most importantly, Heroku web applications require a Procfile.
+
+
+[Configuring Django Apps for Heroku]
+
+Be sure to add gunicorn to your requirements.txt file as well.
+Be sure to add django-heroku to your requirements.txt file as well.
+
+
+Add the following import statement to the top of settings.py:
+
+$import django_heroku
+Then add the following to the bottom of settings.py:
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
+
+
+[Deploying Python and Django Apps on Heroku]
+
+Heroku knows that your app is a Python app by the existence of one of two files in the root of your application:
+
+setup.py
+requirements.txt
