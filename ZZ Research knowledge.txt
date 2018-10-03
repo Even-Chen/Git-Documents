@@ -1,0 +1,7 @@
+The "Django" and "Flask" web frameworks feature convenient built-in web servers
+
+"Django" is a high-level Python Web framework.
+"Flask" is a microframework for Python based on Werkzeug, Jinja 2 and good intentions.
+
+"Gunicorn" is a pure-Python HTTP server for WSGI applications. 
+"Gunicorn" => Green Unicorn is a Python WSGI HTTP Server for UNIX.

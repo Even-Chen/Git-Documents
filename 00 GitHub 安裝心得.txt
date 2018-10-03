@@ -48,9 +48,3 @@ git commit 建立版本
 git reset --hard ORIG_HEAD 還原保留最後一次的變更
 
 git rebase 調換、修改、插入、編輯、拆解、壓縮、刪除 commit 的順序
-
-
-
-
-
-   

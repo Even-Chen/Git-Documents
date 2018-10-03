@@ -33,8 +33,3 @@ $heroku pg:backups:info b017 --app lit-cliffs-59614
 
 ## Restore
 $heroku pg:backups:restore b101 DATABASE_URL --app sushi
-
-
-
-
-
