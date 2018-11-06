@@ -1,0 +1,46 @@
+Dialogflow : Google的Dialogflow（以前稱為API.AI） 
+
+python install 
+
+Dialogflow API V1 will be deprecated on October 23rd, 2019.
+
+可使用 Google 帳號登入, Dialogflow 會設定和使用者選擇的 Google Project 做關連
+
+(1) Create Agent (名稱可和其它人一樣)
+    要先建立 Intents(意圖)和 Entities(關鍵字)
+    每次建立新的 Agent, 一定要串接一個 Google 專案, 不可共用專案, 所以最好先建 Google 專案再建 Agent
+
+(2) Create Entities, 然後 create Intents (輸入測試文字, 會提示串接 Entities)
+
+[Dialogflow V1]
+
+每個 Agent 有兩個 API Key
+Client access token (使用服務時的 Key) 和 Developer access token
+
+[Dialogflow V2]
+
+(Authentication) 取消 V1 用兩個 Key
+V2 of the API relies on a "Google Cloud Platform Service Account" for authentication, instead of the previously used client and developer access tokens.
+
+1.Create a new Service Account
+2.Getting the Service Account key (Download JSON file to local, 遺失要重新申請)
+  (參考 Setting up authentication) https://dialogflow.com/docs/reference/v2-auth-setup 
+  到 https://console.cloud.google.com/iam-admin/serviceaccounts?supportedpurview=project (Google 服務帳戶 => 建立帳戶)
+  User: Dialogflow API (Role 分為 Admin, Client and Reader) 如果只是使用, 就用 Client => 然後產生金鑰 => local download (JSON)
+
+3.安裝 Google Cloud SDK]
+https://cloud.google.com/sdk/docs/
+
+4. Set the environment variable GOOGLE_APPLICATION_CREDENTIALS to the file path of the JSON file that contains your service account key.
+   Heroku => 一樣設定變數是該檔名, 然後把檔案放在整個專案的最外面就可以找到 (跟manage.py放在一起)
+
+
+[參考文件]
+(1) Dialogflow website
+(2) Google cloud platform https://console.cloud.google.com/home/dashboard?project=arbiton-linebot
+(3) Document https://dialogflow-python-client-v2.readthedocs.io/en/latest/
+(4) Gighub v2 sample https://github.com/googleapis/dialogflow-python-client-v2
+
+
+
+

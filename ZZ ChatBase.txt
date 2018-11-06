@@ -1,0 +1,4 @@
+ChatBase Google 產品 for AI 對話
+
+串接 Goolge Cloud Platform 來做權限控制 https://console.cloud.google.com/iam-admin
+需到服務帳戶中建立使用帳號及產生金鑰
