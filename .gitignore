@@ -1,7 +1,5 @@
 /.metadata/
 /.recommenders/
 
-Account.ini
 .env
-Line.ini
-Environment.ini
+*.ini
