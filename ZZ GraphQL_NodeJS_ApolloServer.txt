@@ -1,0 +1,14 @@
+GraphQL 研究
+
+一種來自 Facebook 開發的語法, 能夠輕鬆 Query and Insert data from API
+後端可以接上各種資料來源, 回傳 JSON
+
+Install
+
+需要安裝 Apollo Server 2 架構
+
+(1) Install Node.js (內含 npm => 類似 pip, 專門管理 Node.js package install and uninstall)
+(2) npm install --save apollo-server graphql
+
+參考 https://ithelp.ithome.com.tw/articles/10202644
+
